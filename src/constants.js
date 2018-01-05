@@ -1,0 +1,12 @@
+export const INCREMENT_REQUESTED = 'INCREMENT_REQUESTED';
+export const INCREMENT = 'INCREMENT';
+export const DECREMENT_REQUESTED = 'DECREMENT_REQUESTED';
+export const DECREMENT = 'DECREMENT';
+
+//post
+export const FETCH_POSTS = 'FETCH_POSTS';
+export const CREATE_POST = 'CREATE_POST';
+export const FETCH_POST = 'FETCH_POST';
+export const DELETE_POST = 'DELETE_POST';
+export const POST_GET_FAILED = 'POST_GET_FAILED';
+export const POST_NO_FAILED = 'POST_NO_FAILED';
