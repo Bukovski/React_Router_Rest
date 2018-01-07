@@ -10,15 +10,26 @@ import PostNew from "./components/Posts/PostNew";
 import PostsShow from "./components/Posts/PostsShow";
 
 
+const OldSchoolMenuLink = ({ label, to, activeOnlyWhenExact }) => (
+  <Route path={to} exact={activeOnlyWhenExact} children={({ match }) => (
+    <a className={match ? 'active' : ''}>
+      {match ? '> ' : ''}<Link to={to}>{label}</Link>
+    </a>
+  )}/>
+);
+
 const Routes = (props) => (
     <ConnectedRouter {...props}>
       <div className="container">
 
-        <header>
-          <Link to="/">Home</Link> |{' '}
+        <nav className='navbar navbar-light bg-light'>
+          <OldSchoolMenuLink activeOnlyWhenExact={true} to="/" label="Home"/> |{' '}
+          <OldSchoolMenuLink to="/about-us" label="About"/> |{' '}
+          <OldSchoolMenuLink to="/posts" label="Posts"/> |{' '}
+          {/*<Link to="/">Home</Link> |{' '}
           <Link to="/about-us">About</Link> |{' '}
-          <Link to="/posts">Posts</Link> |{' '}
-        </header>
+          <Link to="/posts">Posts</Link> |{' '}*/}
+        </nav>
         
         <Switch>
           <Route exact path="/" component={ Home } />
